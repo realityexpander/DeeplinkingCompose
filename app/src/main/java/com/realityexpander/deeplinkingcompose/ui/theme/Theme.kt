@@ -1,4 +1,4 @@
-package com.plcoding.deeplinkingcompose.ui.theme
+package com.realityexpander.deeplinkingcompose.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

@@ -1,4 +1,4 @@
-package com.plcoding.deeplinkingcompose
+package com.realityexpander.deeplinkingcompose
 
 import org.junit.Test
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.plcoding.deeplinkingcompose'
+    namespace 'com.realityexpander.deeplinkingcompose'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.plcoding.deeplinkingcompose"
+        applicationId "com.realityexpander.deeplinkingcompose"
         minSdk 21
         targetSdk 33
         versionCode 1

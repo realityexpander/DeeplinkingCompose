@@ -24,15 +24,15 @@
             </intent-filter>
 
             <intent-filter android:autoVerify="true">
-                <data android:host="pl-coding.com"
+                <data android:host="realityexpander.github.io"
                     android:scheme="https" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
 
-            <intent-filter>
-                <data android:host="pl-coding.com"
+            <intent-filter android:autoVerify="true">
+                <data android:host="realityexpander.github.io"
                     android:scheme="http" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
