@@ -1,5 +1,7 @@
 package com.realityexpander.deeplinkingcompose
 
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,6 +20,8 @@ import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import com.realityexpander.deeplinkingcompose.ui.theme.DeeplinkingComposeTheme
 import android.net.Uri
+import android.os.Build
+import androidx.compose.foundation.layout.Column
 
 // Deep link validation are kept on github website:
 // https://github.com/realityexpander/realityexpander.github.io
@@ -42,10 +46,42 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
-                            Button(onClick = {
-                                navController.navigate("detail")
-                            }) {
-                                Text(text = "To detail")
+                            Column {
+
+                                Button(onClick = {
+                                    navController.navigate("detail")
+                                }) {
+                                    Text(text = "To detail")
+                                }
+
+                                // Trigger a http-link to open the detail
+                                // note: this is an example, but its here how other apps can open our app.
+                                Button(
+                                    onClick = {
+                                        val intent = Intent(
+                                            Intent.ACTION_VIEW,
+                                            Uri.parse("https://realityexpander.github.io/33")
+                                        )
+                                        val pendingIntent =
+                                            TaskStackBuilder.create(applicationContext).run {
+                                                addNextIntentWithParentStack(intent)
+                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                                    getPendingIntent(
+                                                        0,
+                                                        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                                                    )
+                                                } else {
+                                                    getPendingIntent(
+                                                        0,
+                                                        PendingIntent.FLAG_UPDATE_CURRENT
+                                                    )
+                                                }
+                                            }
+                                        pendingIntent.send()
+                                    }
+                                ) {
+                                    Text("Trigger Deeplink (33)")
+                                }
                             }
                         }
                     }
