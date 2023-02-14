@@ -22,6 +22,8 @@ import com.realityexpander.deeplinkingcompose.ui.theme.DeeplinkingComposeTheme
 // https://github.com/realityexpander/realityexpander.github.io
 // in /.well_known/assetlinks.json
 
+// Source video: https://www.youtube.com/watch?v=z6VlP0o_sDc&list=WL&index=37&t=1s
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
